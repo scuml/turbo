@@ -112,7 +112,7 @@ export class PageRenderer extends Renderer {
 
     for (const currentElement of currentElements) {
       if (!this.isCurrentElementInElementList(currentElement, newElements) && !currentElement.hasAttribute("turbo-progress-bar")) {
-          document.head.removeChild(currentElement);
+          document.head.removeChild(currentElement)
       }
     }
 
