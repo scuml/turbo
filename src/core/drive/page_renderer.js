@@ -111,7 +111,9 @@ export class PageRenderer extends Renderer {
     const newElements = [...this.newHeadSnapshot.stylesheets]
 
     for (const currentElement of currentElements) {
-      this.isCurrentElementInElementList(currentElement, newElements)
+      if (!this.isCurrentElementInElementList(currentElement, newElements) && !currentElement.hasAttribute("turbo-progress-bar")) {
+          document.head.removeChild(currentElement);
+      }
     }
 
     for (const element of newElements) {

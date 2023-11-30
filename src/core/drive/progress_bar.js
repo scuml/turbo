@@ -106,6 +106,8 @@ export class ProgressBar {
     const element = document.createElement("style")
     element.type = "text/css"
     element.textContent = ProgressBar.defaultCSS
+    element.setAttribute("turbo-progress-bar", "")
+
     if (this.cspNonce) {
       element.nonce = this.cspNonce
     }
